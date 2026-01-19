@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    </head>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Load cart from localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // 2. Cart count element
+    const cartCountEl = document.getElementById("cart-count");
+
+    // 3. Update cart count
+    function updateCartCount() {
+        if (cartCountEl) {
+            cartCountEl.textContent = cart.length;
+        }
+    }
+
+    // 4. Initial update
+    updateCartCount();
+
+    // 5. Add click listeners to all Add-to-cart buttons
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault(); // IMPORTANT for <a href="#">
+
+            const name = this.dataset.name;
+            const price = this.dataset.price;
+
+            cart.push({ name, price });
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            updateCartCount();
+            alert(name + " added to cart");
+        });
+    });
+});
+</script>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Dekhle</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                             <span id="cart-count" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h4 class="display-4 fw-bolder">Find it.Love it.Buy it.</h4>
+                
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/41lhVRdUPvL._SY679_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5>Ben Martin Men Jeans | Baggy Fit Jean's for Man | Loose Fit High Rise Denim | Stretchable Casual Wear Jean's | Dance Rap Rapping Style Pant for Men | Denim Cotton Jeans (0)
+                                    <!-- Product price-->
+                                    800rs - 900rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="Ben Martin Men Jeans | Baggy Fit Jean's for Man | Loose Fit High Rise Denim | Stretchable Casual Wear Jean's | Dance Rap Rapping Style Pant for Men | Denim Cotton Jeans (0) "
+  data-price="850">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/71GaH2nLQ6L._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5> Glowic Men’s Hoodie | Oversized Stylish Sweatshirt for Winter Wear | Trendy Casual Hoodie for Men | Perfect for Gym, Travel, Streetwear Fashion
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">5000rs</span>
+                                    4000rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><button
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  data-name="Glowic Men's Hoodie Oversized Stylish Sweatshirt for Winter Wear | Trendy Casual Hoodie for Men | Perfect for Gym, Travel, Streetwear Fashion"
+  data-price="4000">
+  Add to cart
+</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/61cr6liBkVL._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5>SaintX Men's Formal Blazer | Fully Lined | Slim Fit | Professional Jacket | Premium Business Formal Suit | Office | Wedding | All Purpose
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">4500rs</span>
+                                    3000rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="SaintX Men's Formal Blazer"
+  data-price="3000">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/71nG3R1OPeL._SX569_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5> Brand - Symbol Men's Cotton Shirt | Casual | Plain | Full Sleeve | Summer - Regular Fit (Available in Plus Sizes)
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                       <!-- <div class="bi-star-fill"></div>-->
+                                    </div>
+                                    <!-- Product price-->
+                                    499rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="Symbol Men's Cotton Shirt"
+  data-price="499">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/41CDD8A6TqL._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5> WEAR Men's Warm Fleece Straight Fit Trackpants
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">700rs</span>
+                                    600rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="WEAR Men's Trackpants"
+  data-price="600">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/61fqeFWpnxL._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5>FINIVO FASHION Men's Casual Cotton Plain Button Down Shirt Long Sleeve Textured Summer Beach Shirt for Men
+                                    <!-- Product price-->
+                                    600rs - 700rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="FINIVO Fashion Men's Shirt"
+  data-price="650">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/51x9RcZJ6hL._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5> Men Sweatshirts | Sweatshirts for Men | Unisex Hoodie | Hoodie | Available in Plus Size (SWEATSHIRT-11)
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                       <!-- <div class="bi-star-fill"></div>-->
+                                    </div>
+                                    <!-- Product price-->  
+                                    <span class="text-muted text-decoration-line-through">800rs</span>
+                                    650rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+  class="btn btn-outline-dark mt-auto add-to-cart"
+  href="#"
+  data-name="Men's Sweatshirt Hoodie"
+  data-price="650">
+  Add to cart
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://m.media-amazon.com/images/I/51yn92oL9fL._SY741_.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder"></h5>Pinkmint Men's Solid Regular Fit Shirt
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    499rs
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a
+                                class="btn btn-outline-dark mt-auto-to-cart"
+                                href="#"
+                                data-name="Pinkmint Men's Shirt"
+                                data-price="499">
+                                Add to cart
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Dekhle Website 2026 </p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
